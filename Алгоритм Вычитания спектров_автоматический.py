@@ -4,8 +4,8 @@ import librosa
 from scipy.io.wavfile import write
 
 # edit following wav file name
-infile="C:\\Users\\Maksim Korotchenkov\\PycharmProjects\\MIAODI\\venv\\files\\Чистка_Y_short_автоматизированная\\Y_short_no_shum_9.wav"
-outfile="C:\\Users\\Maksim Korotchenkov\\PycharmProjects\\MIAODI\\venv\\files\\Чистка_Y_short_автоматизированная\\Y_short_no_shum_10.wav"
+infile="C:\\Users\\PycharmProjects\\MIAODI\\venv\\files\\Чистка_Y_short_автоматизированная\\Y.wav"
+outfile="C:\\Users\\PycharmProjects\\MIAODI\\venv\\files\\Чистка_Y_short_автоматизированная\\Y.wav"
 
 
 # load input file, and stft (Short-time Fourier transform)
@@ -21,7 +21,7 @@ b=np.exp(1.0j* angle) # использовать эту информацию о 
 
 # Загруцим оцененный шум, проведем  Кратковременное преобразование Фурье, возьмем среднее
 # print ('Read only noise')
-nw=w[0:10000]
+nw=w[0:10000] # участок, содержащий только шум
 nsr=sr
 ns= librosa.stft(nw)
 nss= np.abs(ns)
